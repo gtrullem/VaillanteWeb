@@ -1,0 +1,24 @@
+{% extends 'master_content.html' %}
+
+{% block maincontent %}
+<table align="center" border="0" width="50%" id="table1" cellspacing="0" cellpadding="0" class="sort sortable-onload-5-6r rowstyle-alt colstyle-alt no-arrow">
+	<thead>
+			<tr>
+				<th width="200" class="sortable">Nom</th>
+				<th width="300" class="sortable">Adresse</th>
+				<th width="100" class="sortable">Pays</th>
+				<th align="right" class="sortable"># Km</th>
+			</tr>
+		</thead>
+		<tbody class="sort">
+			{% for place in places %}
+				<tr>
+					<td class="sort"><a href="<a href='place_detail.php?placeid={{place.getid}}">{{place.getname}}</td>
+					<td class='sort'>{{place.getaddress}} - {{place.getpostal}} {{place.getcity}}</td>
+					<td class='sort'>{{place.getcountry}}</td>
+					<td align='right' class='sort'>{{place.getnbkm}}</td></tr>
+				</tr> 
+			{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

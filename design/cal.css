@@ -1,0 +1,49 @@
+table#calendrier {
+//	width: auto;
+	padding: 0 0 0 0;
+	marging: 0 0 0 0;
+//	margin: 0 auto 1.5em auto;
+	border: 1px solid #C1DAD7;
+	border-collapse:collapse;
+}
+
+table#calendrier td {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	padding: 0 0 0 0;
+	marging: 0 0 0 0;
+}
+
+.calender {
+	font-size: 7pt;
+	width: 100px;
+	height: 100px;
+}
+
+.calendersaturday {
+	font-size: 7pt;
+	width: 100px;
+	height: 100px;
+	background: #D5F2F0;	//	#CCE4F3;
+}
+
+.calenderholiday {
+	font-size: 7pt;
+	width: 100px;
+	height: 100px;
+	background: #C9E7E9; //	#B2CFE2;
+}
+
+.caldate {
+	font-size: 7pt;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.calcontent {
+	padding-top: 10px;
+	vertical-align: text-bottom; 
+	font-size: 7pt;
+}

@@ -1,0 +1,111 @@
+form.formulaire {
+	/*	width: 425px;	*/
+	position : float;
+	font-size: 1.0em;
+}
+
+form.formulaire legend {
+	padding: 0 2px;
+	font-weight: bold;
+	background-color: #279AC4;
+	_margin: 0 -7px; /* IE Win */
+	padding-left: 5px;
+	padding-right: 5px;
+	color: #FFF;
+}
+
+form.formulaire label {
+/*	color: #333;	*/
+	font-weight: normal;
+	display: inline-block;
+	line-height: 1.5;
+	vertical-align: top;
+	cursor: hand;
+	width: 150px;	/* Width of labels */
+}
+
+form.formulaire fieldset {
+	border: 1px solid #279AC4;/*	none;	*/
+	width: 425px;
+	/*
+	border-top: 1px solid #C9DCA6;
+	background: url(../images/formulaire-fieldset.gif) left bottom repeat-x;
+	background-color: #F8FDEF;
+	*/
+	margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------------------- */
+
+form.formulaire fieldset p {
+	list-style: none;
+	padding: 5px;
+	margin: 0;
+}
+
+form.formulaire fieldset fieldset {
+	border: none;
+	margin: 3px 0 0;
+}
+
+form.formulaire fieldset fieldset legend {
+	padding: 0 0 5px;
+	font-weight: normal;
+}
+
+form.formulaire fieldset fieldset label {
+	display: block;
+	width: auto;
+}
+
+form.formulaire fieldset fieldset label {
+	margin-left: 103px;	/* Width plus 3 (html space) */
+}
+
+form.formulaire label.error {
+	margin-left: 103px;
+	width: 220px;
+}
+
+form.formulaire input.submit {
+	margin-left: 103px;
+}
+
+/*\*//*/ form.formulaire legend { display: inline-block; } /* IE Mac legend fix */
+
+
+form.formulaire fieldset fieldset {
+	background: none;
+}
+
+form.formulaire fieldset p, form.formulaire fieldset fieldset {
+	padding: 1px 5px 1px; /*	2px 10px 7px;	*/
+	/*	background: url(../images/formulaire-divider.gif) left bottom repeat-x;	*/
+}
+
+form.formulaire label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+	color: red;
+	font-style: italic
+}
+div.error { display: none; }
+/**/
+input {
+	border: 1px solid #DDD;
+}
+
+input.checkbox {
+	border: none
+}
+
+textarea {
+	border: 1px solid #DDD;
+}
+
+select {
+	border: 1px solid #DDD;
+}
+/**/
+input:focus { border: 1px dotted #279AC4; }
+input.error { border: 1px dotted red; }
+form.formulaire .gray * { color: gray; }

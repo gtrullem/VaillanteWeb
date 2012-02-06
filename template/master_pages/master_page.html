@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>La Vaillante - {{page.maintitle}}</title>
+	<link rel="stylesheet" href="../design/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../design/AdminBar.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../design/tablesort.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../design/print.css" type="text/css" media="print" />
+	<script type="text/javascript" src="../library/tablesort.js"></script>
+	<noscript>
+		<p class="important">Javascript est désactivé. Vous devez l'activer afin de pouvoir utiliser le site dans des conditions optimales.</p>
+	</noscript>
+</head>
+
+<body>
+<div id="body">
+
+<div id="wpadminbar" class="noprint">
+	<div class="quicklinks">
+		<ul>
+			<li id="wp-admin-bar-my-account-with-avatar" class="menupop">
+				<a href="index.php"><span><img src="../design/images/buddyicon_16.jpg" width="16" height="16" alt="Utilisateur" />{{session.name}}</span></a>
+				<ul>
+					<li><a href="../prestation_add.php"><img src='../design/images/icon_new/16x16/application_view_list.png' />&nbsp;Ajout prestation spécifique</a></li>
+					<li><a href="../prestation_multiadd.php"><img src='../design/images/icon_new/16x16/check_box.png' />&nbsp;Ajout prestations multiples</a></li>
+					<li><a href="../prestation_listing.php"><img src='../design/images/icon_new/16x16/attributes_display.png' />&nbsp;Liste de mes prestations</a></li>
+					<hr>
+					<li><a href="../user_mdpupdt.php"><img src='../design/images/icon_new/16x16/asterisk_orange.png' />&nbsp;Changer mon mot de passe</a></li>
+					<li><a href="../user_update.php"><img src='../design/images/icon_new/16x16/vcard_edit.png' />&nbsp;Modifier mon profil</a></li>
+					<hr>
+					<li id="wp-admin-bar-se-deconnecter"><a href="dcnx.php"><img src='../design/images/icon_new/16x16/door_in.png' />&nbsp;Se déconnecter</a></li>
+				</ul>
+			</li>
+			<li id="wp-admin-bar-catalogs" class="menupop"><a href="index.php"><span>Accueil</span></a>
+				<ul>
+					{% if session.status_out > 3 %}
+					<li><a href="../news_add.php"><img src='../design/images/icon_new/16x16/comments_add.png' />&nbsp;Ajouter une news</a></li>
+					{% endif %}
+					<li><a href="http://www.lavaillantetubize.be/" target="_blank"><img src='../design/images/icon_new/16x16/world_go.png' />&nbsp;Site Internet</a></li>
+				</ul>
+			</li>
+			<li id="wp-admin-bar-catalogs" class="menupop"><a href="#"><span>Gestion</span></a>
+				<ul>
+					{% if session.status_out > 3 %}
+						<li><a href="#">Ajout</a>
+							<ul>
+								<li><a href="../discipline_add.php"><img src='../design/images/icon_new/16x16/application_add.png' />&nbsp;Ajouter une discipline</a></li>
+								<li><a href="../subdiscipline_add.php"><img src='../design/images/icon_new/16x16/application_double_add.png' />&nbsp;Ajouter une sous-discipline</a></li>
+								<li><a href="../course_add.php"><img src='../design/images/icon_new/16x16/application_cascade_add.png' />&nbsp;Ajouter un cours</a></li>
+							</ul>
+						</li>
+					{% endif %}
+					<li><a href="#">Listing</a>
+						<ul>
+							<li><a href="../discipline_listing.php"><img src='../design/images/icon_new/16x16/application.png' />&nbsp;Liste des disciplines</a></li>
+							<li><a href="../subdiscipline_listing.php"><img src='../design/images/icon_new/16x16/application_double.png' />&nbsp;Liste des sous-disciplines</a></li>
+							<li><a href="../course_listing.php"><img src='../design/images/icon_new/16x16/application_cascade.png' />&nbsp;Liste des cours</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Horaires</a>
+						<ul>
+							<li><a href="../schedule_course.php"><img src='../design/images/icon_new/16x16/columnchart.png' />&nbsp;Horaire des cours</a></li>
+							<li><a href="../schedule_trainer.php">Horaire des Entraineurs</a></li>
+						</ul>
+					</li>
+					{% if session.status_out > 3 %}
+					<li><a href="#">Trésorerie</a>
+						<ul>
+							<li><a href="../fee.php"><img src='../design/images/icon_new/16x16/calculator_edit.png' />&nbsp;Calcul des Côtisations</a></li>
+							<li><a href="../prestation_listing.php"><img src='../design/images/icon_new/16x16/attributes_display.png' />&nbsp;Liste des prestations</a></li>
+							<li><a href="../prestation_stat.php"><img src='../design/images/icon_new/16x16/application_view_list.png' />&nbsp;Résumé des prestations</a></li>
+						</ul>
+					</li>
+					{% endif %}
+					
+					{% if session.status_out > 2 %}
+				
+					<li><a href='preins_listing.php'><img src='../design/images/icon_new/16x16/application_view_detail.png' />&nbsp;Liste des Pré-Inscriptions</a>;
+
+					{% endif %}
+					
+					{% if session.status_out == 9 %}
+
+					<hr>
+					<li><a href="#">Extranet</a>
+						<ul>
+							<li><a href="../maintenance.php"><img src='../design/images/icon_new/16x16/database_gear.png' />&nbsp;Maintenance database</a></li>
+							<li><hr /></li>
+							<li><a href="../configuration.php"><img src='../design/images/icon_new/16x16/cog_edit.png' />&nbsp;Configuration</a></li>
+							<li><a href="../holiday_add.php"><img src='../design/images/icon_new/16x16/calendar_add.png' />&nbsp;Ajouter une Indisponibilité</a></li>
+							<li><a href="../season_add.php">Ajouter une Saison</a></li>
+							<li><hr /></li>
+							<li><a href="../right_add.php"><img src='../design/images/icon_new/16x16/group_add.png' />&nbsp;Ajouter un Droit</a></li>
+							<li><a href="../right_listing.php"><img src='../design/images/icon_new/16x16/group.png' />&nbsp;Listing des Droits</a></li>
+							<li><a href="../right_summary.php"><img src='../design/images/icon_new/16x16/group_gear.png' />&nbsp;Résumé des Droits</a></li>
+						</ul>
+					</li>
+					{% endif %}
+					<hr>
+					<li><a href="statistics.php"><img src='../design/images/icon_new/16x16/statistics.png' />&nbsp;Statistiques</a></li>
+				</ul>
+            </li>
+            <li id="wp-admin-bar-catalogs" class="menupop"><a href="#"><span>Evènements</span></a>
+				<ul>
+					<li><a href="#">Listing</a>
+						<ul>
+							<li><a href="../place_listing.php"><img src='../design/images/icon_new/16x16/map_magnify.png' />&nbsp;Liste des lieux</a></li>
+							<li><a href="../event_listing.php"><img src='../design/images/icon_new/16x16/date.png' />&nbsp;Liste des évènements</a></li>
+							<li><a href="../product_listing.php"><img src='../design/images/icon_new/16x16/folder.png' />&nbsp;Liste du matériel</a></li>
+							<li><a href="../holiday_listing.php"><img src='../design/images/icon_new/16x16/calendar.png' />&nbsp;Liste des Indisponibilités</a></li>
+						</ul>
+					</li>
+					{% if session.status_out > 3 %}
+					<li><a href="#">Ajout</a>
+						<ul>
+							<li><a href="../place_add.php"><img src='../design/images/icon_new/16x16/map_add.png' />&nbsp;Ajouter un lieu</a></li>
+							<li><a href="../product_add.php"><img src='../design/images/icon_new/16x16/folder_add.png' />&nbsp;Ajouter du matériel</a></li>
+							<li><a href="../event_add.php"><img src='../design/images/icon_new/16x16/date_add.png' />&nbsp;Ajouter un évènement</a></li>
+						</ul>
+					</li>
+					{% endif %}
+					<li><a href="annual_calendar.php"><img src='../design/images/icon_new/16x16/calendar_view_month.png' />&nbsp;Calendrier Annuel</a></li>
+				</ul>
+            </li>
+			<li id="wp-admin-bar-catalogs" class="menupop"><a href="#"><span>Personnes</span></a>
+				<ul>
+					{% if session.status_out > 2 %}
+					<li><a href="#">Ajout</a>
+						<ul>
+							{% if session.status_out == 9 %}
+							<li><a href="../user_add.php"><img src='../design/images/icons/16_user_add.png' />&nbsp;Ajouter un Utilisateur</a></li>
+							{% endif %}	
+							<li><a href="../person_add.php">Ajouter une Personne</a></li>
+							<!-- <li><a href="../relationship_add.php">Ajouter une Relation</a></li> -->
+						</ul>
+					</li>
+					{% endif %}
+					<li><a href="#">Listing</a>
+						<ul>
+							<li><a href="../user_listing.php" title="Liste des utilisateurs"><img src='../design/images/icons/16_search_user.png' />&nbsp;Liste des Utilisateurs</a></li>
+							<li><a href="../person_listing.php">Liste des Personnes</a></li>
+							<li><a href="../affiliate_listing.php">Liste des Gymnastes</a></li>
+							<!-- <li><a href="../relationship_listing.php">Liste des Relations</a></li> -->
+						</ul>
+					</li>
+					<li><a href="../addressbook.php" title="Carnet d'adresse"><img src='../design/images/icon_new/16x16/book_addresses.png' />&nbsp;Carnet d'adresse</a></li>
+					<li><hr></li>
+					<li><a href="../contact.php" title="Contacter..."><img src='../design/images/icon_new/16x16/email_go.png' />&nbsp;Contacter...</a></li>
+				</ul>
+			</li>
+			<li id="wp-admin-bar-catalogs" class="menupop"><a href="#"><span>Bibliothèque</span></a>
+				<ul>
+					<li><a href="../document_add.php"><img src='../design/images/icon_new/16x16/file_extension_wps.png' />&nbsp;Ajouter un document</a></li>
+					<li><a href="../document_listing.php" title="Liste des documents"><img src='../design/images/icon_new/16x16/file_extension_doc.png' />&nbsp;Liste des Documents</a></li>
+					<li><a href="../downdoc_listing.php" title="Documents"><img src='../design/images/icon_new/16x16/download.png' />&nbsp;Documents à Télécharger</a></li>
+				</ul>
+			</li>
+			<li id="wp-admin-bar-catalogs" class="menupop"><a href="../search.php"><span>Recherche</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="header"> 
+	<div class="container">
+		<div align="right">
+		</div>
+		<div id="header_image"></div>
+	</div>
+</div>
+
+<div id="page" class="sidebar_right">
+	{% block content %}
+
+	{% endblock %}
+</div>
+
+<div id="footer">
+	<div class="container">
+		<div id="footer_content">
+			<table width="100%">
+			<tr>
+				<td width="25%"></td>
+				<td width="50%">
+					<a href="http://validator.w3.org/check?uri=referer" target="_blank"><img alt="valid xhtml 1.1" src="../design/images/valid_xhtml11_80x15_2.png"/></a>
+					<a href="http://www.mozilla.com/firefox" target="_blank"><img alt="get FireFox" src="../design/images/get_firefox_80x15.png"/></a>
+					<a href="http://www.opera.com/" target="_blank"><img alt="get Opera" src="../design/images/get_opera_80x15.png"/></a>
+					<a href="http://www.apple.com/fr/safari/" target="_blank"><img alt="get Safari" src="../design/images/get_safari_80x15.png"/></a>
+					<a href="http://sourceforge.net/projects/chromium/files/" target="_blank"><img alt="get Chromium" src="../design/images/get_chomium_80x15.png"/></a>
+				</td>
+				<td width="25%" align="right">
+					<a href="" onclick="javascript:window.print()"><img alt="Imprimer la page" src="../design/images/icons/25_print.png"/></a>
+				</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>	
+
+</div>
+</body>
+</html>

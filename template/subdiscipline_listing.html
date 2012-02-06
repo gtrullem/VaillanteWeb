@@ -1,0 +1,20 @@
+{% extends 'master_content.html' %}
+
+{% block maincontent %}
+	<table id="table0" align="center" border="0" cellspacing="0" cellpadding="0" class="sort sortable-onload-5-6r rowstyle-alt colstyle-alt no-arrow">
+		<thead>
+			<tr>
+				<th width="200" class="sortable">&nbsp;Nom</TD>
+				<th colspan="2" class="sortable" align="center">Acronyme</th>
+			</tr>
+		</thead>
+		<tbody class="sort">
+			{% for subdiscipline in subdisciplines %}
+				<tr>
+					<td class="sort"><a href="subdiscipline_detail.php?subdisciplineid={{subdiscipline.getid}}">{{subdiscipline.gettitle}}</td>
+					<td class="sort">{{subdiscipline.getAcronym}}</td>
+				</tr> 
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

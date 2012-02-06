@@ -1,0 +1,96 @@
+@import "reset.css";
+
+body {
+	margin:0;
+	padding:0;
+	font-family:Verdana;
+	font-size: 10px;
+}
+
+#header {
+  display:none;
+}
+
+#footer_content {
+  display:none;
+}
+
+#footer {
+  display:none;
+}
+
+.noprint {
+  display:none;
+}
+
+/*----------------------------------------------------------------------------*/
+
+input {
+	border: 1px solid #DDD;
+}
+
+input.checkbox {
+	border: none
+}
+
+textarea {
+	border: 1px solid #DDD;
+}
+
+select {
+	border: 1px solid #DDD;
+}
+
+/*----------------------------------------------------------------------------*/
+form.formulaire {
+	width: 425px;
+	position : float;
+	font-size: 1.0em;
+}
+
+form.formulaire legend {
+	padding: 0 2px;
+	font-weight: bold;
+	background-color: #279AC4;
+	_margin: 0 -7px; /* IE Win */
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+form.formulaire label {
+/*	color: #333;	*/
+	padding: 2px 2px 0px 10px;
+	font-weight: normal;
+	display: inline-block;
+	line-height: 1.5;
+	vertical-align: top;
+	cursor: hand;
+	width: 150px;	/* Width of labels */
+}
+
+form.formulaire fieldset {
+	border: 1px solid #000;/*	none;	*/
+	/*
+	border-top: 1px solid #C9DCA6;
+	background: url(../images/formulaire-fieldset.gif) left bottom repeat-x;
+	background-color: #F8FDEF;
+	*/
+	margin-bottom: 10px;
+}
+
+
+table.sort {
+	border: 1px solid #000000;
+	border-collapse:collapse;
+}
+
+th {
+	border: 1px solid #000000;
+	border-collapse:collapse;
+}
+        
+td {
+	border: 1px solid #000000;
+	border-collapse:collapse;
+}
+/**/

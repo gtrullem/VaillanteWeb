@@ -1,0 +1,30 @@
+{% extends 'master_content.html' %}
+
+{% block maincontent %}
+	<table id="table0" align="center" border="0" cellspacing="0" cellpadding="0" class="sort sortable-onload-5-6r rowstyle-alt colstyle-alt no-arrow">
+		<thead>
+			<tr>
+				<th width="225" class="sortable">Titre</th>
+				<th width="70" class="sortable">Type</th>
+				<th width="200" class="sortable">Lieu</th>
+				<th width="55" class="sortable">Date</th>
+				<th width="135" class="sortable">Contact</th>
+				<th width="35"></th>
+			</tr>
+		</thead>
+		<tbody class="sort">
+			{% for event in events %}
+				<tr valign="middle">
+					<td class="sort"><a href="event_detail.php?eventid={{event.getid}}">{{event.gettitle}}</a></td>
+					<td class="sort">{{event.geteventtype}}</td>
+					<td class="sort">{{event.getPlace.getName}}</td>
+					<td class="sort" align="center">{{event.getbegindate}}</td>
+					<td class="sort">{{event.getcontact.getLastName}}, {{event.getcontact.getFirstName}}</td>
+					<td class="sort noprint">
+						<a href="event_update.php?id=eventid={{event.getid}}" title="Modifier le cours"><img src="../design/images/icons/16_Edit.png" height="10" width="10" /></a>&nbsp;&nbsp;&nbsp;<a href="event_del.php?eventid={{event.getid}}" title="Supprimer le cours"><img src="../design/images/icons/16_delete.png" height="10" width="10" /></a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

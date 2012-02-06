@@ -1,0 +1,19 @@
+{% extends 'master_page.html' %}
+
+{% block content %}
+<div id="page" class=" sidebar_right">
+	<div class="container">
+		<div id="frame2">
+			<div id="content">
+				<div class='post'>
+					<h2><a>{{page.title}}</a></h2>
+					<br />
+					{% block maincontent %}
+					
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
